@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
-import { gsap } from "@/lib/gsap"; // Import gsap
 
 // Using the visage image for consistency as requested
 import placeholderImage from "@/assets/visage.webp";
@@ -16,7 +15,7 @@ import placeholderImage from "@/assets/visage.webp";
     >
         <header>
             <h1 class="text-4xl uppercase tracking-tighter">My First Sample Post</h1>
-            <p class="text-neutral-500 uppercase">Date Placeholder - 2024</p> { /* Optional: Add date display */ }
+            <p class="text-neutral-500 uppercase">Date Placeholder - 2024</p>
         </header>
 
         <section class="prose prose-neutral max-w-none prose-p:text-pretty prose-headings:uppercase prose-headings:font-normal">
@@ -41,7 +40,6 @@ import placeholderImage from "@/assets/visage.webp";
                     sizes="(max-width: 600px) 300px, 600px"
                 />
                 {
-                    // Added layered images like about page
                     [...Array(4)].map((_, i) => (
                         <Image
                             style={{ zIndex: i }}
@@ -77,28 +75,6 @@ import placeholderImage from "@/assets/visage.webp";
         </section>
     </article>
 </Layout>
-
-<script>
-    // Added script from about page, adapted selectors
-    gsap.set(".writing-image img:not(.writing-main-image)", {
-        xPercent: 100,
-        objectPosition: "80% 50%",
-    });
-    const img_anim = gsap.to(".writing-image img:not(.writing-main-image)", {
-        objectPosition: "50% 50%",
-        xPercent: 0,
-        stagger: 0.14,
-        paused: true,
-    });
-
-    let main_image = document.querySelector(
-        ".writing-main-image"
-    ) as HTMLImageElement | null; // Changed type to HTMLImageElement
-    if (main_image) {
-        main_image.addEventListener("pointerenter", () => img_anim.play());
-        main_image.addEventListener("pointerleave", () => img_anim.reverse());
-    }
-</script>
 
 <style is:global>
     /* Basic prose styling, potentially enhance or adjust in global css */
