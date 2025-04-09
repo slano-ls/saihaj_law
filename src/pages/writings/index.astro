@@ -1,0 +1,32 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Link from "@components/nav/Link.astro";
+import { writingsData } from "@/content/writings";
+---
+
+<Layout
+    title="Writings — Saihaj Law"
+    description="A collection of thoughts and writings."
+>
+    <section
+        class="container flex max-w-xl flex-col gap-10 px-5 pb-6 pt-32 uppercase text-brand-black"
+    >
+        <h1 class="text-3xl">[Writings]</h1>
+        <ul>
+            {
+                writingsData.map((entry) => (
+                    <li class="flex flex-wrap justify-between gap-4 border-b border-brand-neutral-200 py-1.5 first:border-t">
+                        <Link
+                            href={`/writings/${entry.slug}`}
+                            class="normal-case underline underline-offset-2"
+                        >
+                            {entry.title}
+                        </Link>
+                        {/* We can add more info like date if needed, matching the design */}
+                        <p>{entry.date}</p>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+</Layout> 

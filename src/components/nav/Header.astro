@@ -1,0 +1,20 @@
+---
+import MagneticButton from "@components/nav/MagneticButton.astro";
+import Menu from "@components/menu/Menu.astro";
+import MenuButton from "@components/menu/MenuButton.astro";
+import Graphics from "@components/Graphics";
+---
+
+<header
+    class="header sticky top-0 z-[99] flex w-full items-center justify-between overflow-hidden px-5 pt-5"
+>
+    <MagneticButton className="z-10">
+        <a href="/" aria-label="Go to homepage">
+            <Graphics.logo />
+        </a>
+    </MagneticButton>
+    <nav class="z-10">
+        <MenuButton />
+    </nav>
+    <Menu />
+</header>
