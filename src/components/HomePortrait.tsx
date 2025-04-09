@@ -66,7 +66,7 @@ const Heading = () => {
             anchorX="center"
             anchorY="middle"
         >
-            A (CREATIVE) DEVELOPER BASED IN TORONTO.
+            A (RESEARCHER) AND FOUNDER BASED IN TORONTO.
             <textMaterial
                 ref={material}
                 key={TextMaterial.key}

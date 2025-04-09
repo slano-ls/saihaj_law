@@ -36,8 +36,8 @@ import Link from "@components/nav/Link.astro";
                 </h1>
             </div>
             <Marquee className="bg-brand-secondary text-brand-black">
-                <li class="pt-[3px]">{"// please, create something"}</li>
-                <li class="pt-[3px]">{"// please, create something"}</li>
+                <li class="pt-[3px]">{"// please explore with curiosity :) "}</li>
+                <li class="pt-[3px]">{"// please explore with curiosity :)"}</li>
             </Marquee>
         </section>
         <!--  -->
@@ -45,22 +45,7 @@ import Link from "@components/nav/Link.astro";
             <p>{body[0]}</p>
             <p>{body[1]}</p>
         </section>
-        <!-- project -->
-        <section class="space-y-5">
-            <CurrentProject />
-        </section>
-        <section class="space-y-5">
-            <p>[Technologies in My Arsenal]</p>
-            <ul>
-                {
-                    technologies.map((line) => (
-                        <li class="flex flex-wrap gap-4 border-b border-brand-neutral-200 py-1.5 first:border-t">
-                            <p>{line}</p>
-                        </li>
-                    ))
-                }
-            </ul>
-        </section>
+        <!-- experience -->
         <section class="space-y-5">
             <p>[Experience]</p>
             <ul>
@@ -68,20 +53,20 @@ import Link from "@components/nav/Link.astro";
                     class="flex flex-wrap justify-between gap-4 border-b border-brand-neutral-200 py-1.5 first:border-t"
                 >
                     <Link
-                        href="https://getaxle.io"
+                        href="https://axle.com"
                         target="_blank"
                         class="normal-case underline underline-offset-2"
-                    >axle</Link>
+                    >Axle</Link>
                     <p>Co-Founder & CTO</p>
                 </li>
                 <li
                     class="flex flex-wrap justify-between gap-4 border-b border-brand-neutral-200 py-1.5 first:border-t"
                 >
                     <Link
-                        href="https://brilliantmedia.ai"
+                        href="https://brilliantmediatech.com"
                         target="_blank"
                         class="normal-case underline underline-offset-2"
-                    >brilliant media</Link>
+                    >Brilliant Media Technologies</Link>
                     <p>Co-Founder & CTO</p>
                 </li>
                 <li
@@ -91,7 +76,7 @@ import Link from "@components/nav/Link.astro";
                         href="https://apple.com"
                         target="_blank"
                         class="normal-case underline underline-offset-2"
-                    >apple</Link>
+                    >Apple</Link>
                     <p>Security Researcher</p>
                 </li>
                 <li
@@ -101,37 +86,41 @@ import Link from "@components/nav/Link.astro";
                         href="https://uwaterloo.ca"
                         target="_blank"
                         class="normal-case underline underline-offset-2"
-                    >university of waterloo</Link>
-                    <p>Quantum Researcher</p>
+                    >University of Waterloo</Link>
+                    <p>Researcher</p>
                 </li>
             </ul>
         </section>
-        <section class="flex flex-col gap-5">
-            <h2 class="text-justify text-base">
-                I like to play games in my free time, make music sometimes, read
-                blog posts
-            </h2>
-            <div
-                class="about-image relative h-[clamp(144px,12vh,224px)] w-full overflow-hidden saturate-[0.25]"
-            >
-                <Picture
-                    src={visage}
-                    formats={["webp", "jpg"]}
-                    alt="A screenshot from the game Visage"
-                    class="about-main-image h-full select-none object-none object-center"
-                />
-                {
-                    [...Array(4)].map((_, i) => (
-                        <Picture
-                            style={{ zIndex: i }}
-                            src={visage}
-                            formats={["webp", "jpg"]}
-                            alt="A screenshot from the game Visage"
-                            class="pointer-events-none absolute inset-0 size-full select-none object-none object-center"
-                        />
-                    ))
-                }
-            </div>
+        <!-- books -->
+        <section class="space-y-5">
+            <p>[Books I'm Reading]</p>
+            <ul>
+                <li class="flex flex-wrap gap-4 border-b border-brand-neutral-200 py-1.5 first:border-t">
+                    <Link
+                        href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer/"
+                        target="_blank"
+                        class="normal-case underline underline-offset-2"
+                    >The Pragmatic Programmer</Link>
+                </li>
+                <li class="flex flex-wrap gap-4 border-b border-brand-neutral-200 py-1.5 first:border-t">
+                    <Link
+                        href="https://www.oreilly.com/library/view/clean-code/9780136083238/"
+                        target="_blank"
+                        class="normal-case underline underline-offset-2"
+                    >Clean Code</Link>
+                </li>
+                <li class="flex flex-wrap gap-4 border-b border-brand-neutral-200 py-1.5 first:border-t">
+                    <Link
+                        href="https://www.calnewport.com/books/deep-work/"
+                        target="_blank"
+                        class="normal-case underline underline-offset-2"
+                    >Deep Work</Link>
+                </li>
+            </ul>
+        </section>
+        <!-- project -->
+        <section class="space-y-5">
+            <CurrentProject />
         </section>
         <footer class="flex flex-col items-center gap-4">
             <div class="flex">

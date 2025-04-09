@@ -1,7 +1,8 @@
 export const body = [
-    "I'm a creative developer based in Brazil, dedicated to creating web experiences that resonate with users. Focusing on the visual and interactive elements that make a website truly engaging.",
-    "This portfolio is basically my creative playground. I'll be tossing in updates whenever I dive into new projects throughout the year. Stay tuned for the cool stuff I'll be building!",
-];
+    "I'm a CTO and researcher in Toronto, focused on building computer vision and predictive maintenance systems. I love exploring how technology can modernize legacy industries and problems.",
+    "This site is my personal Library of Alexandria —a place to share my thoughts, things I like, and ideas I want to explore. It's a space for anyone interested in tech, innovation, or just curious about what I'm up to. Feel free to dive in and see what catches your interest!"
+  ];
+ 
 
 export const technologies = [
     "html, css, ts, glsl, go, sql, php",
