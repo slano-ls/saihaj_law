@@ -22,7 +22,7 @@ const {
     <Head title={title} description={description} ogImage={ogImage} />
 
     <body
-        class="flex min-h-screen flex-col overflow-x-hidden font-mono text-base tracking-[-0.4px] antialiased"
+        class="flex min-h-screen flex-col overflow-x-hidden text-base tracking-[-0.4px] antialiased"
     >
         <Favicon />
         <Header />
@@ -44,12 +44,23 @@ const {
                 font-display: swap;
             }
 
+            @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
             ::-webkit-scrollbar {
                 display: none;
             }
             body {
                 -ms-overflow-style: none;
                 scrollbar-width: none;
+                @apply bg-brand-white text-brand-black;
+                font-feature-settings:
+                    "rlig" 1,
+                    "calt" 1;
+                text-rendering: optimizeLegibility;
+                -webkit-text-size-adjust: 100%;
+                -moz-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+                font-family: 'Spectral', serif;
             }
 
             @layer base {
@@ -93,6 +104,16 @@ const {
                     --primary: theme("colors.black");
                     --secondary: #b8c3df;
                 }
+
+                [data-theme="dark"] {
+                    --white: #000000;
+                    --black: #ffffff;
+                    --neutral-100: #1a1a1a;
+                    --neutral-200: #2a2a2a;
+
+                    --primary: #ffffff;
+                    --secondary: #1a1a1a;
+                }
             }
 
             @layer base {
@@ -105,6 +126,82 @@ const {
                     -webkit-text-size-adjust: 100%;
                     -moz-text-size-adjust: 100%;
                     text-size-adjust: 100%;
+                    font-family: 'Spectral', serif;
+                }
+
+                /* Dark theme gradient background */
+                [data-theme="dark"] body {
+                    background: var(--white);
+                }
+
+                /* Enhanced typography for blog posts */
+                .prose {
+                    @apply max-w-none;
+                    font-family: 'Spectral', serif;
+                }
+
+                .prose h1 {
+                    @apply text-4xl font-normal tracking-tighter mb-4;
+                    font-family: 'Spectral', serif;
+                    font-weight: 300;
+                }
+
+                .prose h2 {
+                    @apply text-2xl font-normal tracking-tight mt-8 mb-4 text-brand-black;
+                    font-family: 'Spectral', serif;
+                    font-weight: 300;
+                }
+
+                .prose h3 {
+                    @apply text-xl font-normal tracking-tight mt-6 mb-3 text-brand-black;
+                    font-family: 'Spectral', serif;
+                    font-weight: 300;
+                }
+
+                .prose p {
+                    @apply text-base leading-relaxed mb-4 text-pretty;
+                    font-weight: 200;
+                }
+
+                .prose ul, .prose ol {
+                    @apply mb-4 pl-4;
+                    font-weight: 200;
+                }
+
+                .prose li {
+                    @apply mb-2;
+                }
+
+                .prose blockquote {
+                    @apply border-l-4 border-brand-neutral-200 pl-4 py-2 my-6 italic;
+                    font-weight: 200;
+                }
+
+                .prose pre {
+                    @apply bg-brand-neutral-100 p-4 rounded-lg overflow-x-auto my-6;
+                    font-family: 'Supply Mono', monospace;
+                }
+
+                .prose code {
+                    @apply font-mono text-sm;
+                    font-family: 'Supply Mono', monospace;
+                }
+
+                .prose strong {
+                    @apply font-normal;
+                    font-weight: 300;
+                }
+
+                .prose em {
+                    @apply italic;
+                }
+
+                .prose a {
+                    @apply underline underline-offset-2;
+                }
+
+                .prose img {
+                    @apply rounded-lg my-6;
                 }
             }
         </style>

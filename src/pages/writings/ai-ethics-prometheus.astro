@@ -1,0 +1,103 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import placeholderImage from "@/assets/visage.webp";
+---
+
+<Layout
+    title="The Ethics of Artificial Intelligence: A Modern Prometheus — Saihaj Law"
+    description="Exploring the ethical implications of artificial intelligence and our role as creators."
+>
+    <article
+        class="container flex max-w-xl flex-col gap-12 px-5 pb-6 pt-32 text-brand-black"
+    >
+        <header>
+            <h1 class="text-4xl tracking-tighter font-spectral font-light">The Ethics of Artificial Intelligence: A Modern Prometheus</h1>
+            <p class="text-neutral-500 uppercase">March 2024</p>
+        </header>
+
+        <section class="prose">
+            <h2>Introduction</h2>
+            <p>
+                In Mary Shelley's <em>Frankenstein</em>, Victor Frankenstein creates life only to abandon his creation, leading to tragic consequences. Today, as we develop increasingly sophisticated artificial intelligence systems, we find ourselves in a similar position to Victor—playing the role of modern Prometheans, bringing forth new forms of intelligence into the world.
+            </p>
+
+            <div
+                class="writing-image relative my-8 h-[clamp(144px,12vh,224px)] w-full overflow-hidden saturate-[0.25]"
+                style="margin-left: auto; margin-right: auto;"
+            >
+                <Image
+                    src={placeholderImage}
+                    alt="AI Ethics - A Modern Prometheus"
+                    class="writing-main-image h-full w-full select-none object-none object-center"
+                    width={placeholderImage.width}
+                    height={placeholderImage.height}
+                    widths={[300, 600, placeholderImage.width]}
+                    sizes="(max-width: 600px) 300px, 600px"
+                />
+            </div>
+
+            <h2>The Responsibility of Creation</h2>
+            <p>
+                As creators of artificial intelligence, we must consider several ethical dimensions:
+            </p>
+
+            <ul>
+                <li><strong>Transparency:</strong> How much should we reveal about our AI systems?</li>
+                <li><strong>Accountability:</strong> Who is responsible when AI systems make mistakes?</li>
+                <li><strong>Bias:</strong> How do we ensure our creations don't perpetuate human prejudices?</li>
+            </ul>
+
+            <blockquote>
+                "With great power comes great responsibility." This adage, often attributed to Voltaire, rings particularly true in the context of AI development.
+            </blockquote>
+
+            <h2>Code Example: The Weight of Decisions</h2>
+            <p>
+                Consider this simple decision-making algorithm:
+            </p>
+
+            <pre><code class="language-python">
+def make_ethical_decision(data, context):
+    # Weight different ethical considerations
+    transparency_weight = 0.3
+    fairness_weight = 0.4
+    accountability_weight = 0.3
+    
+    # Calculate decision score
+    score = (transparency_weight * data['transparency'] +
+             fairness_weight * data['fairness'] +
+             accountability_weight * data['accountability'])
+    
+    return score > 0.7  # Threshold for ethical acceptability
+            </code></pre>
+
+            <h2>Looking Forward</h2>
+            <p>
+                As we continue to develop AI systems, we must remember that we are not just creating tools—we are creating entities that will interact with and impact human lives. The ethical frameworks we establish today will shape the future of artificial intelligence and, by extension, humanity itself.
+            </p>
+
+            <h3>Key Takeaways</h3>
+            <ol>
+                <li>AI development requires careful ethical consideration</li>
+                <li>Transparency and accountability are crucial</li>
+                <li>We must actively work to prevent bias in AI systems</li>
+                <li>The decisions we make today will have long-lasting consequences</li>
+            </ol>
+        </section>
+    </article>
+</Layout>
+
+<style is:global>
+    .prose pre {
+        background-color: var(--neutral-100);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+    }
+    
+    .prose code {
+        font-family: "Supply Mono", monospace;
+        font-size: 0.9em;
+    }
+</style> 

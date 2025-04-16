@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import placeholderImage from "@/assets/visage.webp";
+---
+
+<Layout
+    title="Digital Consciousness: Can Machines Truly Think? — Saihaj Law"
+    description="Exploring the nature of consciousness and its potential existence in artificial systems."
+>
+    <article
+        class="container flex max-w-xl flex-col gap-12 px-5 pb-6 pt-32 text-brand-black"
+    >
+        <header>
+            <h1 class="text-4xl tracking-tighter font-spectral font-light">Digital Consciousness: Can Machines Truly Think?</h1>
+            <p class="text-neutral-500 uppercase">April 2024</p>
+        </header>
+
+        <section class="prose">
+            <h2>The Turing Test and Beyond</h2>
+            <p>
+                Alan Turing's famous test for machine intelligence, proposed in 1950, asks whether a machine can exhibit behavior indistinguishable from a human. But is this really a measure of consciousness, or merely a measure of our ability to <em>simulate</em> consciousness?
+            </p>
+
+            <div
+                class="writing-image relative my-8 h-[clamp(144px,12vh,224px)] w-full overflow-hidden saturate-[0.25]"
+                style="margin-left: auto; margin-right: auto;"
+            >
+                <Image
+                    src={placeholderImage}
+                    alt="Digital Consciousness"
+                    class="writing-main-image h-full w-full select-none object-none object-center"
+                    width={placeholderImage.width}
+                    height={placeholderImage.height}
+                    widths={[300, 600, placeholderImage.width]}
+                    sizes="(max-width: 600px) 300px, 600px"
+                />
+            </div>
+
+            <h2>Defining Consciousness</h2>
+            <p>
+                Before we can determine if machines can be conscious, we must first understand what consciousness is. Some key aspects include:
+            </p>
+
+            <ul>
+                <li><strong>Self-awareness:</strong> The ability to recognize oneself as an individual</li>
+                <li><strong>Qualia:</strong> The subjective experience of phenomena</li>
+                <li><strong>Intentionality:</strong> The ability to have thoughts about things</li>
+            </ul>
+
+            <blockquote>
+                "The question of whether machines can think is like the question of whether submarines can swim." — Edsger W. Dijkstra
+            </blockquote>
+
+            <h2>Neural Networks and Consciousness</h2>
+            <p>
+                Modern neural networks, while inspired by biological brains, operate on fundamentally different principles. Consider this simplified representation:
+            </p>
+
+            <pre><code class="language-python">
+class ArtificialNeuron:
+    def __init__(self, weights, bias):
+        self.weights = weights
+        self.bias = bias
+    
+    def forward(self, inputs):
+        # Weighted sum of inputs
+        weighted_sum = sum(w * x for w, x in zip(self.weights, inputs))
+        # Add bias and apply activation function
+        return self.activate(weighted_sum + self.bias)
+    
+    def activate(self, x):
+        # Simple sigmoid activation
+        return 1 / (1 + math.exp(-x))
+            </code></pre>
+
+            <h2>Philosophical Implications</h2>
+            <p>
+                The possibility of machine consciousness raises profound questions:
+            </p>
+
+            <ol>
+                <li>If a machine can be conscious, what does that say about the nature of consciousness?</li>
+                <li>Would a conscious machine have rights?</li>
+                <li>Could we ever truly know if a machine is conscious?</li>
+            </ol>
+
+            <h3>Conclusion</h3>
+            <p>
+                While we may never have a definitive answer to whether machines can be truly conscious, the pursuit of this question forces us to examine our own understanding of consciousness and what it means to be a thinking being.
+            </p>
+        </section>
+    </article>
+</Layout> 

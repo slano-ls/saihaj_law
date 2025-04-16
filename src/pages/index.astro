@@ -20,7 +20,13 @@ import Reveal from "@components/visual/Reveal.astro";
         </div>
         <div class="relative h-12">
             <p class="pointer-events-none select-none text-justify opacity-0" id="researcher-text">
-                A (researcher) and founder based in Toronto.
+                <span class="word">A</span>
+                <span class="word">(researcher)</span>
+                <span class="word">and</span>
+                <span class="word">founder</span>
+                <span class="word">based</span>
+                <span class="word">in</span>
+                <span class="word">Toronto.</span>
             </p>
         </div>
         <div class="mt-4 opacity-0" id="about-section">
@@ -93,16 +99,24 @@ import Reveal from "@components/visual/Reveal.astro";
                 duration: 0.1
             }, 1.1667); // Second note timestamp
 
-            // Animation 2b: Researcher text scramble effect
-            tl.to("#researcher-text", {
-                scrambleText: {
-                    text: "A (researcher) and founder based in Toronto.",
-                    chars: "01XXFFAOOL&&**#><>",
-                    speed: 0.5,
-                    revealDelay: 0.0
-                },
-                duration: 6.5
-            }, 1.1667); // Same timestamp as opacity animation
+            // Animation 2b: Researcher text scramble effect - word by word
+            const words = document.querySelectorAll("#researcher-text .word");
+            
+            words.forEach((word) => {
+                const originalText = word.textContent || "";
+                const scrambleLength = originalText.length;
+                const scrambleChars = "01XXFFAOOL&&**#><>".repeat(Math.ceil(scrambleLength / 17));
+                
+                tl.to(word, {
+                    scrambleText: {
+                        text: originalText,
+                        chars: scrambleChars.slice(0, scrambleLength),
+                        speed: 0.5,
+                        revealDelay: 0.0
+                    },
+                    duration: 6.5
+                }, 1.1667); // All words start scrambling at the same time
+            });
 
             // Animation 3: About me, writings, 2025
             tl.to("#about-section", {
