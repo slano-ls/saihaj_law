@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import placeholderImage from "@/assets/visage.webp";
+import { Fragment } from "astro/jsx-runtime";
 ---
 
 <Layout
@@ -43,40 +44,11 @@ import placeholderImage from "@/assets/visage.webp";
             </p>
 
             <ul>
-                <li><strong>Clarity:</strong> Code should be easy to understand</li>
-                <li><strong>Elegance:</strong> Solutions should be simple yet powerful</li>
-                <li><strong>Maintainability:</strong> Code should be easy to modify and extend</li>
-                <li><strong>Expressiveness:</strong> Code should clearly communicate its intent</li>
+                <li>Clarity and readability</li>
+                <li>Elegant simplicity</li>
+                <li>Consistent style and structure</li>
+                <li>Thoughtful naming and organization</li>
             </ul>
-
-            <blockquote>
-                "Programs must be written for people to read, and only incidentally for machines to execute." — Harold Abelson
-            </blockquote>
-
-            <h2>Code as Poetry</h2>
-            <p>
-                Consider these two implementations of the same function:
-            </p>
-
-            <pre><code class="language-javascript">
-// Implementation 1: Functional and elegant
-const fibonacci = (n) => 
-    n <= 1 ? n : fibonacci(n - 1) + fibonacci(n - 2);
-
-// Implementation 2: Imperative and verbose
-function fibonacci(n) {
-    if (n <= 1) {
-        return n;
-    }
-    let a = 0, b = 1;
-    for (let i = 2; i <= n; i++) {
-        const temp = a + b;
-        a = b;
-        b = temp;
-    }
-    return b;
-}
-            </code></pre>
 
             <h2>The Ethics of Code</h2>
             <p>
