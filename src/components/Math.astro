@@ -1,0 +1,10 @@
+---
+interface Props {
+    display?: boolean;
+    children: string;
+}
+
+const { display = false, children } = Astro.props;
+---
+
+{display ? `\\[${children}\\]` : `\\(${children}\\)`} 

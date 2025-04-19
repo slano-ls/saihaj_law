@@ -14,3 +14,14 @@ export const sound = new Howl({
         console.error('Error playing sound:', error);
     }
 });
+
+export const whooshSound = new Howl({
+    src: ["/whoosh-motion.mp3"],
+    volume: 0.5,
+    onloaderror: (_, error) => {
+        console.error('Error loading whoosh sound:', error);
+    },
+    onplayerror: (_, error) => {
+        console.error('Error playing whoosh sound:', error);
+    }
+});
