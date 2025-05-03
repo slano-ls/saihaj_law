@@ -44,10 +44,9 @@ const PortraitMaterial = shaderMaterial(
 
 		// Image UVs
 		vec2 iUv = uv;
-		iUv.y += 0.12;
 
 		// Ambient light
-		vec3 ambientColor = vec3(0.);
+		vec3 ambientColor = vec3(0.1);
 
 		// Normal
 		vec3 normal = normalize(texture2D(tNormal, iUv).xyz * 2. - 1.);
@@ -56,14 +55,15 @@ const PortraitMaterial = shaderMaterial(
 		vec3 diffuse = texture2D(tBase, iUv).xyz;
 
 		// Depth
-		vec3 depth = texture2D(tDepth, iUv).xyz;
+		float depth = texture2D(tDepth, iUv).r;
+		vec3 depthOffset = vec3(0.0, 0.0, depth * 0.5);
 
 		// Light
-		vec3 lightDirection = normalize(vec3(1.0, 1.0, 2.0));
-		lightDirection.x = uPointer.x; 
-		lightDirection.y = uPointer.y; 
-
-		float diffuseIntensity = max(dot(normal+depth, lightDirection), 0.6);
+		vec3 lightDirection = normalize(vec3(uPointer.x * 2.0, uPointer.y * 2.0, 1.0));
+		
+		// Combine normal and depth for better 3D effect
+		vec3 finalNormal = normalize(normal + depthOffset);
+		float diffuseIntensity = max(dot(finalNormal, lightDirection), 0.4);
 
 		color = ambientColor + diffuse * diffuseIntensity;
 		gl_FragColor = vec4(color, 1.);
