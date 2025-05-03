@@ -11,36 +11,38 @@ import Reveal from "@components/visual/Reveal.astro";
     description="Creating modern interfaces, from design to code."
 >
     <section
-        class="md:text-background container relative my-auto max-w-96 px-5 uppercase [&_div]:flex [&_div]:justify-between"
+        class="md:text-background container relative flex items-center justify-center h-full my-auto max-w-96 px-5 uppercase [&_div]:flex [&_div]:justify-between"
         aria-label="Main home section"
     >
-        <div id="name-section">
-            <p>Saihaj Law</p>
-            <p>/available/</p>
-        </div>
-        <div class="relative h-12">
-            <p class="pointer-events-none select-none text-justify opacity-0" id="researcher-text">
-                <span class="word">A</span>
-                <span class="word">(researcher)</span>
-                <span class="word">and</span>
-                <span class="word">founder</span>
-                <span class="word">based</span>
-                <span class="word">in</span>
-                <span class="word">Toronto.</span>
-            </p>
-        </div>
-        <div class="mt-4 opacity-0" id="about-section">
-            <Link href="/about" class="hover:underline hover:underline-offset-2"
-                >About me</Link
-            >
-            <Link href="/writings" class="hover:underline hover:underline-offset-2"
-                >Writings</Link
-            >
-            <div class="flex gap-2">
-                <p>[2025]</p>
-                <Link href="/brain" class="hover:underline hover:underline-offset-2"
-                    >Brain</Link
+        <div class="flex flex-col gap-4">
+            <div id="name-section">
+                <p>Saihaj Law</p>
+                <p>/available/</p>
+            </div>
+            <div class="relative h-12">
+                <p class="pointer-events-none select-none text-justify opacity-0" id="researcher-text">
+                    <span class="word">A</span>
+                    <span class="word">(researcher)</span>
+                    <span class="word">and</span>
+                    <span class="word">founder</span>
+                    <span class="word">based</span>
+                    <span class="word">in</span>
+                    <span class="word">Toronto.</span>
+                </p>
+            </div>
+            <div class="mt-4 opacity-0" id="about-section">
+                <Link href="/about" class="hover:underline hover:underline-offset-2"
+                    >About me</Link
                 >
+                <Link href="/writings" class="hover:underline hover:underline-offset-2"
+                    >Writings</Link
+                >
+                <div class="flex gap-2">
+                    <p>[2025]</p>
+                    <Link href="/brain" class="hover:underline hover:underline-offset-2"
+                        >Brain</Link
+                    >
+                </div>
             </div>
         </div>
     </section>
