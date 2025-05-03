@@ -10,46 +10,48 @@ import Reveal from "@components/visual/Reveal.astro";
     title="Creative Developer — Saihaj Law"
     description="Creating modern interfaces, from design to code."
 >
-    <section
-        class="md:text-background container relative flex h-screen items-center justify-center max-w-96 px-5 uppercase [&_div]:flex [&_div]:justify-between"
-        aria-label="Main home section"
-    >
-        <div id="name-section">
-            <p>Saihaj Law</p>
-            <p>/available/</p>
-        </div>
-        <div class="relative h-12">
-            <p class="pointer-events-none select-none text-justify opacity-0" id="researcher-text">
-                <span class="word">A</span>
-                <span class="word">(researcher)</span>
-                <span class="word">and</span>
-                <span class="word">founder</span>
-                <span class="word">based</span>
-                <span class="word">in</span>
-                <span class="word">Toronto.</span>
-            </p>
-        </div>
-        <div class="mt-4 opacity-0" id="about-section">
-            <Link href="/about" class="hover:underline hover:underline-offset-2"
-                >About me</Link
-            >
-            <Link href="/writings" class="hover:underline hover:underline-offset-2"
-                >Writings</Link
-            >
-            <div class="flex gap-2">
-                <p>[2025]</p>
-            </div>
-        </div>
-    </section>
-    <div
-        class="absolute left-1/2 top-3/4 max-w-40 -translate-x-1/2 leading-none home-animation-4 opacity-0"
-    >
-        <Marquee
-            className="rounded-sm bg-brand-primary uppercase text-brand-white"
+    <div class="relative h-screen flex items-center justify-center">
+        <section
+            class="md:text-background container relative max-w-96 px-5 uppercase [&_div]:flex [&_div]:justify-between"
+            aria-label="Main home section"
         >
-            <li class="pt-[3px]">You've got something they don't</li>
-            <li class="pt-[3px]">You've got something they don't</li>
-        </Marquee>
+            <div id="name-section">
+                <p>Saihaj Law</p>
+                <p>/available/</p>
+            </div>
+            <div class="relative h-12">
+                <p class="pointer-events-none select-none text-justify opacity-0" id="researcher-text">
+                    <span class="word">A</span>
+                    <span class="word">(researcher)</span>
+                    <span class="word">and</span>
+                    <span class="word">founder</span>
+                    <span class="word">based</span>
+                    <span class="word">in</span>
+                    <span class="word">Toronto.</span>
+                </p>
+            </div>
+            <div class="mt-4 opacity-0" id="about-section">
+                <Link href="/about" class="hover:underline hover:underline-offset-2"
+                    >About me</Link
+                >
+                <Link href="/writings" class="hover:underline hover:underline-offset-2"
+                    >Writings</Link
+                >
+                <div class="flex gap-2">
+                    <p>[2025]</p>
+                </div>
+            </div>
+        </section>
+        <div
+            class="absolute left-1/2 top-3/4 max-w-40 -translate-x-1/2 leading-none home-animation-4 opacity-0"
+        >
+            <Marquee
+                className="rounded-sm bg-brand-primary uppercase text-brand-white"
+            >
+                <li class="pt-[3px]">You've got something they don't</li>
+                <li class="pt-[3px]">You've got something they don't</li>
+            </Marquee>
+        </div>
     </div>
     <HomeFooter />
 </Layout>
