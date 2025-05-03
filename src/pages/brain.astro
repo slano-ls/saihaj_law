@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+    title="Brain Visualization — Saihaj Law"
+    description="Interactive 3D brain visualization."
+>
+    <div id="brain-container" class="fixed inset-0 bg-black"></div>
+</Layout>
+
+<script>
+    import MainBrain from "@/js/MainBrain";
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        try {
+            // Create the brain visualization
+            new MainBrain();
+            console.log("Brain visualization initiated");
+        } catch (error) {
+            console.error("Error initializing brain visualization:", error);
+        }
+    });
+</script>
+
+<style>
+    /* Ensure the canvas covers the full screen */
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+    }
+    
+    /* Hide any DOM stats display */
+    body > div:last-child {
+        z-index: 20;
+    }
+</style> 

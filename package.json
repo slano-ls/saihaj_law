@@ -20,12 +20,17 @@
         "astro": "^4.4.15",
         "gsap": "^3.12.5",
         "howler": "^2.2.4",
+        "lodash": "^4.17.21",
+        "postprocessing": "^6.37.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "sharp": "^0.34.1",
+        "socket.io-client": "^4.8.1",
         "tailwindcss": "^3.4.1",
         "three": "^0.169.0",
-        "typescript": "^5.4.2"
+        "three-bas": "^3.0.0",
+        "typescript": "^5.4.2",
+        "zustand": "^4.5.6"
     },
     "devDependencies": {
         "@astrojs/markdown-remark": "^6.3.1",

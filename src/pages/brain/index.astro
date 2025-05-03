@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+    title="Brain Visualization — Saihaj Law"
+    description="Interactive 3D brain visualization."
+>
+    <div class="relative h-screen w-full">
+        <canvas id="brain-canvas" class="absolute inset-0" />
+    </div>
+</Layout>
+
+<script>
+    import * as THREE from "three";
+    import { Power4, TweenMax } from "gsap";
+    import { BufferGeometryUtils } from "three/examples/jsm/utils/BufferGeometryUtils";
+    import { MainBrain } from "@/js/MainBrain";
+
+    // Initialize the brain visualization
+    const brain = new MainBrain();
+</script> 
