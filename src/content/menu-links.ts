@@ -15,9 +15,5 @@ export const MenuLinks: Links = [
     {
         title: "Writings",
         href: "/writings",
-    },
-    {
-        title: "Signal Map",
-        href: "/signal-map",
-    },
+    }
 ];
